@@ -67,4 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // grab all the shapes and store them into a variable
   const tetrisShapes = [lShape, zShape, tShape, oShape, iShape];
+  console.log("All my shapes:", tetrisShapes);
+
+  let currentPosition = 4;
+  let current = tetrisShapes[0][0];
+  console.log("Current shape:", current);
+
+  // drawing first rotation of the first tetris shape
+  const draw = () => {
+    current.forEach((index) => {
+      square[currentPosition + index].classList.add("tetrisShape");
+    });
+  };
+
+  draw();
 });
