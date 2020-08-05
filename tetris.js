@@ -8,10 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // width
   const width = 10;
 
+  // grabbing the score span tag
+  const score = document.querySelectorAll("#score");
+
+  // grabbing the start-button
+  const startButton = document.querySelectorAll("#start-button");
+
   // genereates 200 divs
   for (let i = 0; i < count; i++) {
     // create div element
     const div = document.createElement("div");
+
+    div.innerHTML = i;
 
     // append child to grid
     grid.appendChild(div);
@@ -20,4 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // grabbing div and storing it in square variable
   const square = Array.from(document.querySelectorAll("#grid div"));
   console.log(square);
+
+  //The Shapes
+  const lShape = [
+    [1, width + 1, width * 2 + 1, 2],
+    [width, width + 1, width + 2, width * 2 + 2],
+    [1, width + 1, width * 2 + 1, width * 2],
+    [width, width * 2, width * 2 + 1, width * 2 + 2],
+  ];
+
+  const zShape = [
+    [0, width, width + 1, width * 2 + 1],
+    [width + 1, width + 2, width * 2, width * 2 + 1],
+    [0, width, width + 1, width * 2 + 1],
+    [width + 1, width + 2, width * 2, width * 2 + 1],
+  ];
+
+  const tShape = [
+    [1, width, width + 1, width + 2],
+    [1, width + 1, width + 2, width * 2 + 1],
+    [width, width + 1, width + 2, width * 2 + 1],
+    [1, width, width + 1, width * 2 + 1],
+  ];
+
+  const oShape = [
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+  ];
+
+  const iShape = [
+    [1, width + 1, width * 2 + 1, width * 3 + 1],
+    [width, width + 1, width + 2, width + 3],
+    [1, width + 1, width * 2 + 1, width * 3 + 1],
+    [width, width + 1, width + 2, width + 3],
+  ];
+
+  // grab all the shapes and store them into a variable
+  const tetrisShapes = [lShape, zShape, tShape, oShape, iShape];
 });
