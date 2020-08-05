@@ -70,7 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("All my shapes:", tetrisShapes);
 
   let currentPosition = 4;
-  let current = tetrisShapes[0][0];
+
+  //  select random shape in first rotation
+  const random = Math.floor(Math.random() * tetrisShapes.length);
+  console.log("Random shape number", random);
+
+  let current = tetrisShapes[random][0];
   console.log("Current shape:", current);
 
   // drawing first rotation of the first tetris shape
