@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // grabbing div and storing it in square variable
-  const square = document.querySelectorAll("#grid div");
+  const square = Array.from(document.querySelectorAll("#grid div"));
   console.log(square);
 });
