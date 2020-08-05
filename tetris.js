@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const tetrisShapes = [lShape, zShape, tShape, oShape, iShape];
   console.log("All my shapes:", tetrisShapes);
 
-  let currentPosition = 4;
+  let currentPosition = 0;
 
   //  select random shape in first rotation
   const random = Math.floor(Math.random() * tetrisShapes.length);
   console.log("Random shape number", random);
 
-  let current = tetrisShapes[random][0];
+  let current = tetrisShapes[random][currentPosition];
   console.log("Current shape:", current);
 
   // drawing first rotation of the first tetris shape
@@ -85,5 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  draw();
+  // drawing first rotation of the first tetris shape
+  const unDraw = () => {
+    current.forEach((index) => {
+      square[currentPosition + index].classList.remove("tetrisShape");
+    });
+  };
 });
