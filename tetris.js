@@ -19,15 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // create div element
     const div = document.createElement("div");
 
-    div.innerHTML = i;
-
     // append child to grid
     grid.appendChild(div);
   }
 
   // grabbing div and storing it in square variable
   const square = Array.from(document.querySelectorAll("#grid div"));
-  console.log(square);
 
   //The Shapes
   const lShape = [
